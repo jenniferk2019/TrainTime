@@ -5,8 +5,113 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
 </head>
 <body>
-    
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-4">Unicorn Magical Rail</h1>
+            <h2 class="lead">Glitter Aboard!</h2>
+        </div>
+        <div class="card" style="width: 69.5rem;">
+            <div class="card-header">
+                Current Train Schedule
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Train Name</th>
+                        <th scope="col">Destination</th>
+                        <th scope="col">Frequency (min)</th>
+                        <th scope="col">Next Arrival</th>
+                        <th scope="col">Minutes Away</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td scope="row">PonyXpress 1</td>
+                        <td>Twilight Town</td>
+                        <td>5</td>
+                        <td>12:05 AM</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">PonyXpress 2</td>
+                        <td>Sparkleville</td>
+                        <td>10</td>
+                        <td>1:10 AM</td>
+                        <td>15</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">PonyXpress 3</td>
+                        <td>Rainbow City</td>
+                        <td>15</td>
+                        <td>2:15 AM</td>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">PonyXpress 4</td>
+                        <td>Candy Row</td>
+                        <td>20</td>
+                        <td>3:20 AM</td>
+                        <td>15</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">PonyXpress 5</td>
+                        <td>Gemstone Village</td>
+                        <td>25</td>
+                        <td>2:25 AM</td>
+                        <td>30</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">PonyXpress 6</td>
+                        <td>Celestia Hall</td>
+                        <td>30</td>
+                        <td>1:30 AM</td>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <td scope="row">PonyXpress 7</td>
+                        <td>Moonbeam Town</td>
+                        <td>35</td>
+                        <td>2:15 AM</td>
+                        <td>10</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="card" style="width: 69.5rem;">
+                <div class="card-header">
+                    Add Train
+                </div>
+                <form>
+                    <div class="form-group">
+                        <label for="name-input">Train Name</label>
+                        <input type="text" class="form-control" id="name-input" aria-describedby="emailHelp"
+                            placeholder="Train Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="role-input">Destination</label>
+                        <input type="text" class="form-control" id="role-input" placeholder="Destination">
+                    </div>
+                    <div class="form-group">
+                        <label for="date-input">First Train Time (HH:MM - Military Time)</label>
+                        <input type="Date" class="form-control" id="date-input" aria-describedby=""
+                            placeholder="First Train">
+                    </div>
+                    <div class="form-group">
+                        <label for="rate-input">Frequency</label>
+                        <input type="number" class="form-control" id="rate-input" aria-describedby=""
+                            placeholder="Frequency">
+                    </div>
+                    <div class="form-group form-check">
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="add-employee">Submit</button>
+                </form>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery.js"></script>
 </body>
 </html>
