@@ -1,36 +1,37 @@
-$( document ).ready(function() {
+$(document).ready(function() {
 
-            var config = {
-                apiKey: "AIzaSyB_EHbAh6fz0PYaM4oc0w4r70LgE0TuBVE",
-                authDomain: "strongpoint-22712.firebaseapp.com",
-                databaseURL: "https://strongpoint-22712.firebaseio.com",
-                projectId: "strongpoint-22712",
-                storageBucket: "strongpoint-22712.appspot.com",
-                messagingSenderId: "471113406244",
-                appId: "1:471113406244:web:0f53d94ec981cd25"
-            };
+    var firebaseConfig = {
+        apiKey: "AIzaSyCMMc3qgx4bqPnPdJs-NjQdtwIZz1XXNT4",
+        authDomain: "new-project-e0fad.firebaseapp.com",
+        databaseURL: "https://new-project-e0fad.firebaseio.com",
+        projectId: "new-project-e0fad",
+        storageBucket: "new-project-e0fad.appspot.com",
+        messagingSenderId: "315244355942",
+        appId: "1:315244355942:web:ede7af7a4e24bf04"
+      };
             firebase.initializeApp(config);
-            var database = firebase.database();
-            var name = "";
-            var role = "";
-            var date = "";
-            var rate = 0;
-            $("#add-employee").on("click", function (event) {
+            var trainData = firebase.database();
+            // var trainName = "";
+            // var destination = "";
+            // var firstTrain= "";
+            // var frequency;
+            $("#add-train").click(function (event) {
                 event.preventDefault();
-                name = $("#name-input").val().trim();
-                role = $("#role-input").val().trim();
-                date = $("#date-input").val().trim();
-                rate = $("#rate-input").val().trim();
+                trainName = $("#name-input").val().trim();
+                destination = $("#destination-input").val().trim();
+                firstTrain = $("#date-input").val().trim();
+                frequency = $("#frequency-input").val().trim();
                 // Code for handling the push
-                database.ref().push({
-                    name: name,
-                    role: role,
-                    date: date,
-                    rate: rate,
-                    dateAdded: firebase.database.ServerValue.TIMESTAMP
-                });
+                var newTrain = {
+                    trainName: trainName,
+                    destination: destination,
+                    firstTrain: firstTrain,
+                    frequency: frequency
+                }
+                trainData.ref().push(newTrain);
+                console.log("I added a new train")
             });
-            database.ref().on("child_added", function (snapshot) {
+            trainData.ref().on("child_added", function (snapshot) {
                 // storing the snapshot.val() in a variable for convenience
                 var sv = snapshot.val();
                 var newRow = $("<tr>");
