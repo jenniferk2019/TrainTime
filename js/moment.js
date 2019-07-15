@@ -11,10 +11,10 @@ $(document).ready(function() {
       };
             firebase.initializeApp(config);
             var trainData = firebase.database();
-            // var trainName = "";
-            // var destination = "";
-            // var firstTrain= "";
-            // var frequency;
+            var trainName = "";
+            var destination = "";
+            var firstTrain= "";
+            var frequency;
             $("#add-train").click(function (event) {
                 event.preventDefault();
                 trainName = $("#name-input").val().trim();
@@ -37,18 +37,18 @@ $(document).ready(function() {
                 var newRow = $("<tr>");
                 var nameData = $("<td>");
                 nameData.text(sv.name);
-                var roleData = $("<td>");
-                roleData.text(sv.role);
+                var destinationData = $("<td>");
+                destinationData.text(sv.destination);
                 var dateData = $("<td>");
                 dateData.text(sv.date);
-                var rateData = $("<td>");
-                rateData.text(sv.rate);
+                var frequencyData = $("<td>");
+                frequencyData.text(sv.frequency);
                 // Console.loging the last user's data
                 console.log(sv.name);
-                console.log(sv.role);
+                console.log(sv.destination);
                 console.log(sv.date);
-                console.log(sv.rate);
-                newRow.append(nameData, roleData, dateData, rateData);
+                console.log(sv.frequency);
+                newRow.append(nameData, destinationData, dateData, frequencyData);
                 $("tbody").append(newRow);
             });
 });
