@@ -15,12 +15,30 @@ $(document).ready(function() {
             var destination = "";
             var firstTrain= "";
             var frequency;
+            
             $("#add-train").click(function (event) {
                 event.preventDefault();
                 trainName = $("#name-input").val().trim();
                 destination = $("#destination-input").val().trim();
                 firstTrain = $("#date-input").val().trim();
                 frequency = $("#frequency-input").val().trim();
+                if (trainName === "") {
+                    event.preventDefault();
+                    $("#name-input").attr("placeholder", "Please insert information");
+                }
+                if (destination === "") {
+                    event.preventDefault();
+                    $("#destination-input").attr("placeholder", "Please insert information");
+                }
+                if (firstTrain === "") {
+                    event.preventDefault();
+                    $("#date-input").attr("placeholder", "Please insert information");
+                }
+                if (frequency === "") {
+                    event.preventDefault();
+                    $("#frequency-input").attr("placeholder", "Please insert information");
+                }
+                console.log(trainName)
                 // Code for handling the push
                 var newTrain = {
                     trainName: trainName,

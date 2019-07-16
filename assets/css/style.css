@@ -6,24 +6,34 @@ body {
 }
 
 #style {
-    background-image: url(../images/trainbanner.jpg);
-    background-position: right center;
+    background-image: url(../images/trainbanner2.JPG);
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 h1 {
-    color: palegreen;
+    color: hotpink;
     font-weight: 400;
-    font-family: Georgia;
+    font-family: 'Baloo Bhaijaan', cursive;
     -webkit-text-stroke-color: white;
     -webkit-text-stroke-width: 1px;
 }
 
 h2 {
-    color: palegreen;
+    color: hotpink;
     font-weight: 400;
-    font-family: Georgia;
+    font-family: 'Baloo Bhaijaan', cursive;
     -webkit-text-stroke-color: white;
     -webkit-text-stroke-width: .2px;
+}
+
+.card-header {
+    background: hotpink;
+    font-family: 'Baloo Bhaijaan', cursive;
+    color: palegreen;
+}
+
+::placeholder {
+    color: red;
 }
