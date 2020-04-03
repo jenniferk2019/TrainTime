@@ -1,4 +1,4 @@
-This fictional application incorporates Firebase to host arrival and departure data. 
+This fictional application incorporates Firebase to host arrival and departure train data. 
 
 My app will retrieve and manipulate this information with Moment.js. 
 
